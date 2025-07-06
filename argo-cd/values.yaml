@@ -1,0 +1,8 @@
+server:
+  service:
+    type: LoadBalancer
+  ingress:
+    enabled: false
+configs:
+  params:
+    server.insecure: true
