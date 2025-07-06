@@ -13,16 +13,16 @@ provider "helm" {
 }
 
 
-resource "helm_release" "argocd" {
-  name       = "argocd"
-  namespace  = "argocd"
+resource "helm_release" "argo_rollouts" {
+  name       = "argo-rollouts"
+  namespace  = "argo-rollouts"
   create_namespace = true
 
   repository = "https://argoproj.github.io/argo-helm"
-  chart      = "argo-cd"
-  version    = "8.1.2" 
+  chart      = "argo-rollouts"
+  version    = "2.37.7"
 
   values = [
-    file("${path.module}/values.yaml")
+    file("${path.module}/rollouts-values.yaml")
   ]
 }

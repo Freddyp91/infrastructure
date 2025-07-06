@@ -1,0 +1,19 @@
+controller:
+  replicas: 2
+  resources:
+    requests:
+      memory: 128Mi
+      cpu: 100m
+    limits:
+      memory: 256Mi
+      cpu: 200m
+
+dashboard:
+  enabled: true
+  service:
+    type: LoadBalancer
+  ingress:
+    enabled: false
+
+notifications:
+  enabled: false
